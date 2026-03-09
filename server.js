@@ -1,11 +1,15 @@
 import express from "express";
 import dotenv from "dotenv";
+import cors from "cors";
 import { sql } from "./config/db.js";
 
 dotenv.config();
 
 const app = express();
 app.use(express.json())
+app.use(cors({
+    origin: "*" // Allow all origins
+}))
 const PORT = process.env.PORT || 5001
 
 
